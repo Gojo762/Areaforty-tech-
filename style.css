@@ -1003,3 +1003,73 @@ th {
         flex-direction: column;
     }
 }
+
+
+
+
+/* =====================================================
+   AREA FORTY EXTRA POLISH
+===================================================== */
+
+.announcement {
+    padding: 8px 20px;
+
+    background: #05080c;
+
+    border-bottom: 1px solid rgba(34, 211, 238, .08);
+
+    color: #94a3b8;
+
+    text-align: center;
+
+    font-size: 11px;
+    font-weight: 600;
+
+    letter-spacing: .3px;
+}
+
+.announcement span {
+    margin: 0 10px;
+
+    color: #334155;
+}
+
+.hero-label {
+    display: inline-flex;
+
+    margin: 0 0 18px;
+    padding: 7px 11px;
+
+    border: 1px solid rgba(34, 211, 238, .2);
+    border-radius: 6px;
+
+    background: rgba(34, 211, 238, .05);
+
+    color: #22d3ee;
+
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+@media (max-width: 500px) {
+
+    .announcement {
+        font-size: 9px;
+    }
+
+    .announcement span {
+        margin: 0 4px;
+    }
+
+    .hero-label {
+        font-size: 9px;
+
+
+
+
+
+    }
+
+}
