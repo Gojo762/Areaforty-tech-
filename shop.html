@@ -1,1 +1,363 @@
-<!doctype html><html><head><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="stylesheet" href="style.css"></head><body><header><h1>Shop</h1></header><div id="grid" class="grid"></div><script src="./app.js"></script></body></html>
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Shop | AreaForty Tech</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header>
+
+    <div class="header-inner">
+
+        <a href="index.html" class="logo">
+            Area<span>Forty</span> Tech
+        </a>
+
+        <div class="search-box">
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search products..."
+                oninput="searchProducts()"
+            >
+
+        </div>
+
+        <nav>
+
+            <a href="index.html">Home</a>
+
+            <a href="shop.html">Shop</a>
+
+            <a href="cart.html">
+                🛒 Cart
+                <span id="cartCount">0</span>
+            </a>
+
+            <a href="admin.html">Admin</a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+<!-- =====================================================
+     SHOP HERO
+===================================================== -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <h1>SHOP TECH</h1>
+
+        <p>
+            Find your next PC, laptop, monitor,
+            gaming accessory and more.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     SHOP CONTROLS
+===================================================== -->
+
+<section class="section">
+
+    <div class="section-title">
+
+        <div>
+
+            <h2>All Products</h2>
+
+            <p id="productCount">
+                Browse AreaForty Tech products
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- CATEGORY BUTTONS -->
+
+    <div class="category-grid">
+
+        <button
+            class="btn btn-blue"
+            onclick="filterCategory('all')"
+        >
+            All
+        </button>
+
+        <button
+            class="btn"
+            onclick="filterCategory('gaming-pc')"
+        >
+            🖥️ Gaming PCs
+        </button>
+
+        <button
+            class="btn"
+            onclick="filterCategory('laptops')"
+        >
+            💻 Laptops
+        </button>
+
+        <button
+            class="btn"
+            onclick="filterCategory('monitors')"
+        >
+            🖥️ Monitors
+        </button>
+
+        <button
+            class="btn"
+            onclick="filterCategory('headsets')"
+        >
+            🎧 Headsets
+        </button>
+
+        <button
+            class="btn"
+            onclick="filterCategory('keyboards')"
+        >
+            ⌨️ Keyboards
+        </button>
+
+        <button
+            class="btn"
+            onclick="filterCategory('mouse')"
+        >
+            🖱️ Mouse
+        </button>
+
+        <button
+            class="btn"
+            onclick="filterCategory('controllers')"
+        >
+            🎮 Controllers
+        </button>
+
+    </div>
+
+
+    <br>
+
+
+    <!-- SORT -->
+
+    <label for="sortProducts">
+        Sort products
+    </label>
+
+    <select
+        id="sortProducts"
+        onchange="sortProducts()"
+    >
+
+        <option value="default">
+            Recommended
+        </option>
+
+        <option value="low">
+            Price: Low → High
+        </option>
+
+        <option value="high">
+            Price: High → Low
+        </option>
+
+        <option value="name">
+            Name A → Z
+        </option>
+
+    </select>
+
+
+    <!-- =================================================
+         PRODUCTS
+    ================================================= -->
+
+    <div
+        id="grid"
+        class="grid"
+    ></div>
+
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    <div class="footer-grid">
+
+        <div>
+
+            <h3>AreaForty Tech</h3>
+
+            <p>
+                Gaming, computers and technology
+                for South African customers.
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <h3>Shop</h3>
+
+            <a href="shop.html">
+                All Products
+            </a>
+
+            <a href="shop.html?category=gaming-pc">
+                Gaming PCs
+            </a>
+
+            <a href="shop.html?category=laptops">
+                Laptops
+            </a>
+
+            <a href="shop.html?category=monitors">
+                Monitors
+            </a>
+
+        </div>
+
+
+        <div>
+
+            <h3>Support</h3>
+
+            <a href="#">
+                Contact Us
+            </a>
+
+            <a href="#">
+                Delivery
+            </a>
+
+            <a href="#">
+                Returns
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="copyright">
+
+        © 2026 AreaForty Tech.
+        All rights reserved.
+
+    </div>
+
+</footer>
+
+
+<!-- =====================================================
+     SHOP JAVASCRIPT
+===================================================== -->
+
+<script>
+
+let products = [
+
+    {
+        id: 1,
+        name: "AreaForty Entry Gaming PC",
+        price: 8999,
+        category: "gaming-pc",
+        image: "images/gaming-pc.jpg",
+        stock: 5,
+        badge: "SALE"
+    },
+
+    {
+        id: 2,
+        name: "AreaForty Gaming PC Pro",
+        price: 12999,
+        category: "gaming-pc",
+        image: "images/gaming-pc.jpg",
+        stock: 3,
+        badge: "POPULAR"
+    },
+
+    {
+        id: 3,
+        name: "Gaming Laptop 15.6\"",
+        price: 12999,
+        category: "laptops",
+        image: "images/gaming-laptop.jpg",
+        stock: 4,
+        badge: "NEW"
+    },
+
+    {
+        id: 4,
+        name: "Performance Gaming Laptop",
+        price: 16999,
+        category: "laptops",
+        image: "images/gaming-laptop.jpg",
+        stock: 2,
+        badge: "NEW"
+    },
+
+    {
+        id: 5,
+        name: "24\" 144Hz Gaming Monitor",
+        price: 2499,
+        category: "monitors",
+        image: "images/monitor.jpg",
+        stock: 8,
+        badge: "SALE"
+    },
+
+    {
+        id: 6,
+        name: "27\" 165Hz Gaming Monitor",
+        price: 3999,
+        category: "monitors",
+        image: "images/monitor.jpg",
+        stock: 5,
+        badge: "POPULAR"
+    },
+
+    {
+        id: 7,
+        name: "AreaForty Gaming Headset",
+        price: 699,
+        category: "headsets",
+        image: "images/gaming-headset.jpg",
+        stock:  
