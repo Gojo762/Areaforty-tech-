@@ -1,0 +1,136 @@
+<svg width="1000" height="500" viewBox="0 0 1000 500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Background -->
+    <radialGradient id="bgGlow" cx="50%" cy="45%" r="75%">
+      <stop offset="0%" stop-color="#0a0a1a"/>
+      <stop offset="60%" stop-color="#050510"/>
+      <stop offset="100%" stop-color="#000000"/>
+    </radialGradient>
+
+    <!-- Neon gradients -->
+    <linearGradient id="neonBluePurple" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00f0ff"/>
+      <stop offset="55%" stop-color="#7a3cff"/>
+      <stop offset="100%" stop-color="#b026ff"/>
+    </linearGradient>
+
+    <linearGradient id="ringGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f0ff"/>
+      <stop offset="100%" stop-color="#b026ff"/>
+    </linearGradient>
+
+    <radialGradient id="coreGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="35%" stop-color="#00f0ff"/>
+      <stop offset="100%" stop-color="#7a3cff" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Glow filter -->
+    <filter id="glow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="6" result="blur1"/>
+      <feMerge>
+        <feMergeNode in="blur1"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="softGlow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="14" result="blur2"/>
+      <feMerge>
+        <feMergeNode in="blur2"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="textGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="blur3"/>
+      <feMerge>
+        <feMergeNode in="blur3"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1000" height="500" fill="url(#bgGlow)"/>
+
+  <!-- faint starfield -->
+  <g fill="#ffffff" opacity="0.55">
+    <circle cx="60" cy="70" r="1.4"/>
+    <circle cx="140" cy="230" r="1"/>
+    <circle cx="90" cy="400" r="1.6"/>
+    <circle cx="920" cy="80" r="1.4"/>
+    <circle cx="870" cy="330" r="1"/>
+    <circle cx="950" cy="420" r="1.7"/>
+    <circle cx="480" cy="40" r="1.1"/>
+    <circle cx="520" cy="470" r="1.1"/>
+    <circle cx="200" cy="60" r="1"/>
+    <circle cx="800" cy="60" r="1.2"/>
+    <circle cx="40" cy="250" r="1"/>
+    <circle cx="960" cy="230" r="1.2"/>
+  </g>
+
+  <!-- Faint circuit trace lines radiating outward -->
+  <g stroke="url(#neonBluePurple)" stroke-width="1" opacity="0.35" fill="none">
+    <path d="M 500 250 L 500 90 L 560 60"/>
+    <path d="M 500 250 L 500 410 L 440 445"/>
+    <path d="M 500 250 L 300 250 L 250 200"/>
+    <path d="M 500 250 L 700 250 L 760 300"/>
+    <path d="M 500 250 L 350 150 L 300 150"/>
+    <path d="M 500 250 L 650 350 L 700 350"/>
+  </g>
+  <g fill="#00f0ff" opacity="0.7">
+    <circle cx="560" cy="60" r="3"/>
+    <circle cx="440" cy="445" r="3"/>
+    <circle cx="250" cy="200" r="3"/>
+    <circle cx="760" cy="300" r="3"/>
+    <circle cx="300" cy="150" r="3"/>
+    <circle cx="700" cy="350" r="3"/>
+  </g>
+
+  <!-- ============ ALIEN / PORTAL EMBLEM ============ -->
+  <g transform="translate(500,195)">
+    <!-- outer glow disc -->
+    <circle cx="0" cy="0" r="95" fill="url(#coreGlow)" opacity="0.25"/>
+
+    <!-- Hexagonal portal frame -->
+    <polygon points="0,-88 76,-44 76,44 0,88 -76,44 -76,-44"
+             fill="none" stroke="url(#ringGrad)" stroke-width="3" filter="url(#glow)"/>
+    <polygon points="0,-70 61,-35 61,35 0,70 -61,35 -61,-35"
+             fill="none" stroke="#00f0ff" stroke-width="1" opacity="0.5"/>
+
+    <!-- orbit rings -->
+    <ellipse cx="0" cy="0" rx="88" ry="30" fill="none" stroke="url(#ringGrad)" stroke-width="1.5" opacity="0.6" transform="rotate(-18)" filter="url(#glow)"/>
+    <ellipse cx="0" cy="0" rx="88" ry="30" fill="none" stroke="#b026ff" stroke-width="1" opacity="0.4" transform="rotate(18)"/>
+
+    <!-- Alien eye -->
+    <g filter="url(#glow)">
+      <path d="M -46 0 C -20 -34, 20 -34, 46 0 C 20 34, -20 34, -46 0 Z"
+            fill="#050510" stroke="url(#neonBluePurple)" stroke-width="2.5"/>
+      <ellipse cx="0" cy="0" rx="17" ry="24" fill="#00f0ff" opacity="0.9"/>
+      <ellipse cx="0" cy="0" rx="8" ry="15" fill="#ffffff"/>
+      <ellipse cx="0" cy="-4" rx="3.5" ry="5" fill="#7a3cff"/>
+    </g>
+
+    <!-- small orbiting nodes -->
+    <circle cx="76" cy="-44" r="4" fill="#ffffff" filter="url(#glow)"/>
+    <circle cx="-76" cy="44" r="4" fill="#b026ff" filter="url(#glow)"/>
+    <circle cx="0" cy="88" r="4" fill="#00f0ff" filter="url(#glow)"/>
+  </g>
+
+  <!-- ============ WORDMARK ============ -->
+  <g filter="url(#textGlow)">
+    <text x="500" y="378" text-anchor="middle"
+          font-family="'Orbitron','Arial Narrow',Arial,sans-serif"
+          font-weight="800" font-size="72" letter-spacing="10"
+          fill="url(#neonBluePurple)">AREA<tspan fill="#ffffff">40</tspan></text>
+  </g>
+
+  <!-- Underline accent -->
+  <line x1="270" y1="404" x2="730" y2="404" stroke="url(#ringGrad)" stroke-width="2" filter="url(#glow)"/>
+
+  <!-- Tagline -->
+  <text x="500" y="432" text-anchor="middle"
+        font-family="'Courier New',monospace" font-size="17" letter-spacing="6"
+        fill="#8fdfff" opacity="0.85">TECH &amp; ACCESSORIES</text>
+</svg>
