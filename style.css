@@ -1073,3 +1073,25 @@ th {
     }
 
 }
+
+body{
+  background:#0B1020;
+  color:#F8FAFC;
+}
+
+.hero{
+  background:linear-gradient(135deg,#0B1020,#24104A,#7C3AED);
+}
+
+.hero h1{
+  text-shadow:0 0 15px #A855F7;
+}
+
+.btn{
+  background:#7C3AED;
+  box-shadow:0 0 20px rgba(168,85,247,.6);
+}
+
+.btn:hover{
+  background:#A855F7;
+}
