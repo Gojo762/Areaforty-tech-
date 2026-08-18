@@ -34,6 +34,7 @@ html {
 
 body {
     margin: 0;
+    position: relative; 
     font-family: 'Inter', Arial, sans-serif;
     background:
         radial-gradient(
@@ -1045,12 +1046,28 @@ body{
 
 /* ===== SPACE VIBE ===== */
 
+/* ===== SPACE VIBE ===== */
+
 body{
   background:
     radial-gradient(circle at 20% 20%, rgba(124,58,237,.18), transparent 25%),
     radial-gradient(circle at 80% 10%, rgba(34,211,238,.15), transparent 20%),
     radial-gradient(circle at 50% 80%, rgba(255,255,255,.05), transparent 30%),
     #050816;
+}
+
+/* AREA FORTY LOGO WATERMARK */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url('Images/areaforty-logo.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  opacity: 0.15;
+  z-index: -1;
+  pointer-events: none;
 }
 
 .neon-title{
