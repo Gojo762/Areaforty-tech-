@@ -1125,3 +1125,18 @@ body::before {
   from{transform:translateY(0);}
   to{transform:translateY(-40px);}
 }
+
+.hero-label{
+  color:#C084FC;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  text-shadow:0 0 12px #7C3AED;
+}
+
+.neon-title{
+  color:#fff;
+  text-shadow:
+    0 0 8px #fff,
+    0 0 20px #7C3AED,
+    0 0 40px #22D3EE;
+}
