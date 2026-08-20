@@ -1107,3 +1107,21 @@ body::before {
 .neon-title{
   text-shadow:0 0 15px #fff,0 0 35px #7C3AED;
 }
+
+/* ===== PROJECT NEBULA STARS ===== */
+
+.stars{
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background-image:
+    radial-gradient(2px 2px at 20% 30%,#fff,transparent),
+    radial-gradient(2px 2px at 70% 40%,#C084FC,transparent),
+    radial-gradient(2px 2px at 45% 80%,#22D3EE,transparent);
+  animation:drift 18s linear infinite;
+}
+
+@keyframes drift{
+  from{transform:translateY(0);}
+  to{transform:translateY(-40px);}
+}
