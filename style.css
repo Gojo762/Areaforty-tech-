@@ -1140,3 +1140,58 @@ body::before {
     0 0 20px #7C3AED,
     0 0 40px #22D3EE;
 }
+
+/* ===== PROJECT NEBULA ===== */
+
+.hero{
+  position:relative;
+  overflow:hidden;
+}
+
+.galaxy{
+  position:absolute;
+  top:-120px;
+  right:-80px;
+  width:320px;
+  height:320px;
+  border-radius:50%;
+  background:radial-gradient(circle,#C084FC 0%,#7C3AED 35%,transparent 70%);
+  opacity:.35;
+  filter:blur(8px);
+}
+
+.planet{
+  position:absolute;
+  border-radius:50%;
+  animation:float 8s ease-in-out infinite;
+}
+
+.planet1{
+  width:120px;
+  height:120px;
+  top:40px;
+  left:-30px;
+  background:radial-gradient(circle at 30% 30%,#A855F7,#312E81);
+}
+
+.planet2{
+  width:70px;
+  height:70px;
+  bottom:60px;
+  right:40px;
+  background:radial-gradient(circle at 30% 30%,#22D3EE,#1E3A8A);
+}
+
+.planet3{
+  width:18px;
+  height:18px;
+  top:170px;
+  right:120px;
+  background:#F8FAFC;
+  box-shadow:0 0 15px #fff;
+}
+
+@keyframes float{
+  0%,100%{transform:translateY(0);}
+  50%{transform:translateY(-15px);}
+}
