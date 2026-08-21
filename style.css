@@ -1195,3 +1195,29 @@ body::before {
   0%,100%{transform:translateY(0);}
   50%{transform:translateY(-15px);}
 }
+
+/* ===== NEBULA CATEGORY ICONS ===== */
+
+.category-icon{
+    width:72px;
+    height:72px;
+    margin:0 auto 14px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:18px;
+    background:rgba(124,58,237,.12);
+    box-shadow:0 0 20px rgba(124,58,237,.25);
+}
+
+.category-icon img{
+    width:58px;
+    height:58px;
+    object-fit:contain;
+    filter:drop-shadow(0 0 10px rgba(168,85,247,.7));
+}
+
+.category:hover .category-icon{
+    transform:scale(1.08);
+    transition:.25s;
+}
